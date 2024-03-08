@@ -24,4 +24,16 @@ class Solution  {
 			return nums.size();
 		}
 
-	};
+};
+
+class Solution  {
+	public:
+		int removeElement(vector<int>& nums, int val) {
+			nums.erase(nums,val);			return nums.size();
+
+		}
+
+};
+
+
+

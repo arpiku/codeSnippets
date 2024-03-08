@@ -1,5 +1,3 @@
-
-
 // A C like solution
 class Solution {
 public:
@@ -23,16 +21,16 @@ class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         std::vector<int> result;
-        result.reserve(m+n);
+        result.reserve(m+n); 
         std::merge(nums1.begin(),nums1.begin()+m,nums2.begin(),nums2.end(), std::back_inserter(result));
         nums1 = result;
         return;
     }
 };
 
+
 #include <vector>
 #include <algorithm> // For std::copy
-
 class Solution {
 public:
     void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
