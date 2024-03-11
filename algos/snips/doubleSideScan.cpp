@@ -1,3 +1,5 @@
+
+// I wrote this to solve the leet code problem, product except self.. I belive this code can be improved
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
@@ -37,3 +39,5 @@ public:
         return {};
     }
 };
+
+
