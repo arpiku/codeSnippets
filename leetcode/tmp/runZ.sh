@@ -23,7 +23,7 @@ filename="${basename%.*}"
 
 # Compile the C++ file
 echo "Compiling $filename.cpp..."
-g++ -std=c++20 -o "$filename" "$filename.cpp"
+g++ -std=c++23 -o "$filename" "$filename.cpp"
 
 # Check if compilation was successful
 if [ $? -ne 0 ]; then
