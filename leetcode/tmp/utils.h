@@ -1,3 +1,5 @@
+#pragma once
+
 #include<vector>
 #include<iostream>
 #include<optional>
@@ -14,7 +16,7 @@
 #include<limits>
 #include<numeric>
 #include<compare>
-
+#include<sstream>
 #define LOG(x) std::cout << x << std::endl;
 
 
@@ -35,4 +37,21 @@ struct ListNode {
     ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
 
-void printVec(std::vector<int> vec);
+void printVec(std::vector<int>& vec);
+void printStrVec(const std::vector<std::string>& vec);
+
+void printList(ListNode* head);
+
+// std::vector<int> makeIntVector(std::fucntion<int(int)> )
+
+ListNode* intVecToList(const std::vector<int>& vec);
+
+// int getListLength(ListNode* head) {
+// size_t length = 0;
+// ListNode* iter = head;
+// while(iter) {
+//     length++;
+//     iter = iter->next;
+// }
+// return length;
+// }
