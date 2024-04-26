@@ -1,46 +1,21 @@
-#include"utils.h"    
-#include <cctype>
-#include <limits>
+#include "utils.h"
 
-template<typename T>
-T atoi_impl(const char* str)
-{
-    while (std::isspace(static_cast<unsigned char>(*str)))
-        ++str;
- 
-    bool negative = false;
- 
-    if (*str == '+')
-        ++str;
-    else if (*str == '-')
-    {
-        ++str;
-        negative = true;
-    }
- 
-    T result = 0;
-    for (; std::isdigit(static_cast<unsigned char>(*str)); ++str)
-    {
-        int digit = *str - '0';
-        result *= 10;
-        result -= digit; // calculate in negatives to support INT_MIN, LONG_MIN,..
-    }
- 
-    return negative ? result : -result;
-}
 
-int myAtoi(std::string s) {
+int myAtoiFail(std::string s) {
   bool negative = false;
   long result = 0;
+  int isWordBeforeNum = 0;
+
   for (auto &ch : s) {
-		if(std::isalpha(ch))
-			return 0;
     if (std::isspace(ch) || ch == '+')
       continue;
     if (ch == '-') {
       negative = true;
-    }
+      }
     if (std::isdigit(ch)) {
+      if(isWordBeforeNum > 0) {
+        return 0;
+      }
       int digit = ch - '0';
       result *= 10;
       result -= digit;
@@ -60,15 +35,44 @@ int myAtoi(std::string s) {
   return negative ? int(result) : int(-result);
 }
 
+int myAtoi(std::string s) {
+    bool negative = false;
+    long result = 0;
+    bool numStarted = false;
+
+    for (char ch : s) {
+        if (std::isspace(ch)) {
+            if (numStarted) {
+                break;  
+            }
+            continue;  
+        }
+
+        if (ch == '+' || ch == '-') {
+            if (numStarted) {
+                break;              }
+            negative = (ch == '-');
+            numStarted = true;
+            continue;  
+        }
+
+        if (std::isdigit(ch)) {
+            numStarted = true;
+            int digit = ch - '0';
+            result = result * 10 + digit;
+
+            if (result > std::numeric_limits<int>::max()) {
+                return (negative) ? std::numeric_limits<int>::min() : std::numeric_limits<int>::max();
+            }
+        } else {
+            // Non-numeric character encountered, stop parsing
+            break;
+        }
+    }
+
+    return (negative) ? -static_cast<int>(result) : static_cast<int>(result);
+}
+
 int main() {
-	std::vector<std::string> sx = {"000234", "  12312", "-2323", "9999999999999999"};
-
-	const std::string strs = "-- 123  asdf  asdf2 asdf sd as 123";
-	std::istringstream iss(strs);
-	std::string word;
-
-	
-	for(auto& str:sx)
-		std::cout << myAtoi(str) << std::endl;
-	return 0;
+  return 0;
 }

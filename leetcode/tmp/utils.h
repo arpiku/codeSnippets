@@ -1,5 +1,6 @@
 #pragma once
 
+#include<ranges>
 #include<vector>
 #include<iostream>
 #include<optional>
@@ -17,7 +18,14 @@
 #include<numeric>
 #include<compare>
 #include<sstream>
+#include<unordered_set>
+#include<climits>
+#include<iomanip>
+
 #define LOG(x) std::cout << x << std::endl;
+#define vec2dInt std::vector<std::vector<int>> 
+#define vecInt std::vector<int> 
+
 
 
 struct TreeNode {
@@ -38,6 +46,7 @@ struct ListNode {
 };
 
 void printVec(std::vector<int>& vec);
+void printVec(vec2dInt& vec2d);
 void printStrVec(const std::vector<std::string>& vec);
 
 void printList(ListNode* head);
@@ -45,6 +54,10 @@ void printList(ListNode* head);
 // std::vector<int> makeIntVector(std::fucntion<int(int)> )
 
 ListNode* intVecToList(const std::vector<int>& vec);
+
+TreeNode* intVecToBinaryTree(const std::vector<int>& vec);
+void deleteTree(TreeNode* root);
+void printTreeGUI(TreeNode* root);
 
 // int getListLength(ListNode* head) {
 // size_t length = 0;

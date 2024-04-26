@@ -1,0 +1,62 @@
+
+Compiling ...
+Compilation of output failed.
+Script execution complete.
+Compiling ...
+Compilation of output failed.
+Script execution complete.
+Compiling ...
+Compilation of output failed.
+Script execution complete.
+Compiling ...
+Compilation of output failed.
+Script execution complete.
+Compiling ...
+Compilation of output failed.
+Script execution complete.
+Compiling ...
+Compilation of output failed.
+Script execution complete.
+Compiling ...
+Compilation of output failed.
+Script execution complete.
+Compiling ...
+Executing output...
+[101,10,9,55,11,3,21,18,15,20,7,-]
+[3,9,10,101,11,55,20,15,18,21,7,-]
+Level 0:
+    3
+Level 1:
+    9   20
+Level 2:
+   10   11   15    7
+Level 3:
+  101   55   18
+Level 4:
+   21
+Traversals-------
+[101,10,102,9,55,11,-]
+[21,18,15,20,7,-]
+result
+Level 0:
+    3
+Script execution complete.
+Compiling ...
+Executing output...
+[101,10,9,55,11,3,21,18,15,20,7,-]
+[3,9,10,101,11,55,20,15,18,21,7,-]
+Level 0:
+    3
+Level 1:
+    9   20
+Level 2:
+   10   11   15    7
+Level 3:
+  101   55   18
+Level 4:
+   21
+Traversals-------
+[101,10,102,9,55,11,-]
+[21,18,15,20,7,-]
+result
+Script execution complete.

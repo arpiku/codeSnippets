@@ -1,4 +1,28 @@
 #include"utils.h"
+#include <iterator>
+
+bool foo() {
+    LOG("bar");
+  return true;
+}
+void boolFooBar() {
+  if(false && foo()) {
+    LOG("foo");    
+  }
+  if(true && foo()) {
+    LOG("bar");
+  }
+}
+
+void strTest() {
+  std::string s = "arpiku";
+  LOG(s.substr(1,6));
+}
+
+void dist() {
+  vecInt vv = {1,2,3}  ;
+  std::cout << std::distance(vv.end(),vv.begin());
+}
 
 
  // std::set<char> ss;
@@ -62,7 +86,36 @@ void utilTest() {
   
 }
 
+void transform() {
+}
+
+void reverseInsert() {
+  std::vector<int> vv = {1,2,3,4,5,6,7,8,9};
+  printVec(vv);
+  std::vector<int>vv2 = {0};
+  std::copy_backward(vv.rbegin(),vv.rbegin()+5,std::back_inserter(vv2));
+  printVec(vv2);
+}
+
+void generate_n() {
+  std::vector<int> vv = {1,2,3};
+  std::vector<int> v2 = {0,0,0};
+  std::vector<int> v3 = {};
+  static int i;
+  auto foobar = [](int n){return n*n;};
+  std::generate_n(v2.begin(), 7,[&](){return foobar(vv[i++]);}); //v2 must have the memory already available
+  printVec(v2);
+}
+
+void fills() {
+  std::vector<int> vv = {1,1,1,1,1};
+  std::fill(vv.begin(),vv.end(),-1);
+  printVec(vv);
+  std::ranges::fill(vv,-2); //This is different as the ranges based paradigm shift in C++20.
+  printVec(vv);
+}
+
 int main() {
-  utilTest();
+  dist();
    return 0;
 }
