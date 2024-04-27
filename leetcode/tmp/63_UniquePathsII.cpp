@@ -50,7 +50,7 @@ int uniquePathsWithObstacles(std::vector<std::vector<int>> &obstacleGrid) {
 int main() {
   std::vector<std::vector<int>> vv = {{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
 
-  std::cout << uniquePathsWithObstacles(vv);
+  LOG(uniquePathsWithObstacles(vv));
 
   return 0;
 }
